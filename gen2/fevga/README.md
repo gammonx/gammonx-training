@@ -1,14 +1,9 @@
-# gammonx-training
-neural net trainings data for the gammonx mars bot
-
-## Template
-
 ### Trainings Data
 |    Metric    |    Value    |
 | ------------ | ----------- |
-| prior gen    | ?           |
-| sample size  | ?           |
-| bootstrap    | ?           |
+| prior gen    | gen1        |
+| sample size  | 3000        |
+| bootstrap    | 1.0         |
 | completed    | ?           |
 | discarded    | ?           |
 | samples      | ?           |
