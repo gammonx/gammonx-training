@@ -27,8 +27,8 @@
 | v-near 0.5   | 0.0%         |
 | e1 t-loss    | 0.25341      |
 | e1 v-loss    | 0.23454      |
-| e22 t-loss   | 0.23004      |
-| e22 v-loss   | 0.22812      |
+| e200 t-loss  | 0.23004      |
+| e200 v-loss  | 0.22812      |
 | val gap      | 0.00192      |
 
 ### Tournament
