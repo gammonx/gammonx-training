@@ -30,3 +30,25 @@
 | e196 t-loss  | 0.19697      |
 | e196 v-loss  | 0.19523      |
 | val gap      | 0.00174      |
+
+### Tournament
+
+===========================================
+  Tournament Results gen0 vs. wildbg
+===========================================
+  Model A : training_net (gen0)
+  Model B : wildbg
+  Modus   : (from game)
+  Total games  : 1000
+  Decisive     : 1000
+  Draws        : 0
+  Discarded    : 0
+  Avg turns    : 60.3
+  Model A wins : 510 (51.0%)
+  Model B wins : 490 (49.0%)
+  A win rate   : 51.00%
+  95% CI       : [47.90%, 54.09%]
+  Significance : p>0.10  (z=0.63) - not significant
+  Win rate last 10 checkpoints: 51.05% ± 0.05%
+  Verdict: INCONCLUSIVE.
+===========================================

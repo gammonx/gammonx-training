@@ -52,3 +52,23 @@
   Win rate last 10 checkpoints: 64.35% ± 0.09%
   Verdict: A is STRONGER (significant).
 ===========================================
+
+===========================================
+  Tournament Results gen1 vs. wildbg
+===========================================
+  Model A : training_net (gen1)
+  Model B : wildbg
+  Modus   : (from game)
+  Total games  : 1000
+  Decisive     : 1000
+  Draws        : 0
+  Discarded    : 0
+  Avg turns    : 60.4
+  Model A wins : 537 (53.7%)
+  Model B wins : 463 (46.3%)
+  A win rate   : 53.70%
+  95% CI       : [50.60%, 56.77%]
+  Significance : p<0.05  (z=2.34) - significant
+  Win rate last 10 checkpoints: 53.75% ± 0.05%
+  Verdict: INCONCLUSIVE.
+===========================================
