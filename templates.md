@@ -29,6 +29,6 @@
 | v-near 0.5   | ?         |
 | e1 t-loss    | ?      |
 | e1 v-loss    | ?      |
-| e22 t-loss   | ?      |
-| e22 v-loss   | ?      |
+| e200 t-loss  | ?      |
+| e200 v-loss  | ?      |
 | val gap      | ?      |
