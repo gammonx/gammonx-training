@@ -5,7 +5,12 @@
 | ------------ | ------------ |
 | prior gen    | linear model |
 | sample size  | 20_000       |
-| bootstrap    | 1            |
+| lambda       | 1            |
+| gamma        | 1            |
+| small s gap  | 0.02         |
+| small multi  | 1.5          |
+| big s gap    | 0.2          |
+| big multi    | 0.5          |
 | completed    | ?       |
 | discarded    | ?            |
 | samples      | ?    |
@@ -27,8 +32,12 @@
 | val min      | 0            |
 | val max      | 1            |
 | v-near 0.5   | ?         |
+| parent v-loss| -            |
 | e1 t-loss    | ?      |
 | e1 v-loss    | ?      |
 | e200 t-loss  | ?      |
 | e200 v-loss  | ?      |
 | val gap      | ?      |
+
+### Tournaments
+TBD

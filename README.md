@@ -4,52 +4,113 @@ Training data, model metrics, and evaluation results for neural networks used by
 
 ## Overview
 
-This repository acts as a versioned record of the iterative self-play training pipeline for GammonX.Mars. Each generation of neural nets is trained via self-play, evaluated against prior generations in head-to-head tournaments, and documented here for reproducibility and comparison.
+This repository is a versioned record of the iterative self-play training pipeline for the GammonX Mars bot. Neural networks are trained with self-play data, games against the WildBG bot service, and replay data from previous generations. Each candidate is evaluated in head-to-head tournaments and documented for reproducibility and comparison.
 
 The pipeline currently covers the following game variants:
 
-| Variant     | Status      |
-| ----------- | ----------- |
-| Plakoto     | active      |
-| Fevga       | active      |
-| Tavla       | planned     |
-| Portes      | planned     |
-| Backgammon  | planned     |
+| Variant     | Status      | Champion  |
+| ----------- | ----------- | -----------
+| Plakoto     | active      | legacy    |
+| Fevga       | active      | legacy    |
+| Tavla       | active      | gen10     |
+| Portes      | active      | gen10     |
+| Backgammon  | active      | gen10     |
+
+The game variants `Tavla`, `Portes`, and `Backgammon` share the `Default` neural network. Historical Fevga and Plakoto generations are stored under their respective `legacy` directories.
+
+## TD-Gammon Approach
+The neural net learns a value function from self-play games. For each position, it
+predicts the expected game outcome. Training targets are constructed from later
+position-value estimates and are anchored by the actual result at the end of the game.
+This propagates useful learning signals backward without labelled moves or a
+hand-crafted evaluation function.
+
+Forward-view TD($\lambda$) builds each target from a weighted mixture of rewards and
+later position-value estimates. The trace parameter $\lambda$ controls the trade-off
+between bootstrapping and waiting for the observed result, while $\gamma$ controls
+discounting. Because backgammon games are finite and the final outcome is not
+discounted here, $\gamma = 1.0$.
+
+- **Monte Carlo** ($\lambda = 1.0$): every position is trained directly toward the
+  final game result. This is unbiased by the net's intermediate predictions, but has
+  higher variance.
+- **Forward-view TD(0)** ($\lambda = 0.0$): each position is trained toward the next
+  position's predicted value. This learns sooner from intermediate positions, but
+  introduces bootstrapping bias.
+- **Forward-view TD(0.7)** ($\lambda = 0.7$): combines multi-step targets, balancing
+  the lower variance of TD(0) with the stronger outcome signal of Monte Carlo.
+
+The Default network uses five cumulative output probabilities: win, gammon win,
+backgammon win, gammon loss, and backgammon loss. Fevga and Plakoto use a single
+win-probability output. The bot converts these probabilities into position equity when
+ranking candidate moves.
 
 ## Repository Structure
 
 ```
-gen{N}/
-  {variant}/
-    README.md            # training data stats, model metrics, tournament results
-    training_data.csv    # self-play training samples
-    training_data.val.csv# validation samples
+{model-family}/
+  [legacy/]
+    gen{N}/
+      README.md                       # Run statistics, metrics, and tournament results
+      training_data/
+        *.csv                         # Training, validation, game, and trajectory data
+      training_net*.dat               # TorchSharp neural-network model
+      training_net*.dat.meta.json     # Model format, game mode, outputs, and architecture
 ```
 
-Each generation folder (`gen0`, `gen1`, ...) contains one subfolder per game variant. The `README.md` inside each tracks three sections:
+Each model-family directory contains generation directories (`gen0`, `gen1`, ...).
+Generation READMEs may record:
 
-- **Trainings Data** — self-play run statistics (sample size, completed games, avg turns, duration, etc.)
-- **Training Model** — dataset and loss metrics (train/val size, mean, min/max, per-epoch losses, val gap)
-- **Tournament** — head-to-head results vs. one or more prior generations (win rates, confidence intervals, significance tests, verdict)
+- **Training Data**: self-play settings and run statistics, including sample size,
+  completed games, average turns, and duration.
+- **Training Model**: dataset statistics and per-epoch training and validation losses.
+- **Tournaments**: head-to-head results against prior generations or external bots,
+  including win rates, confidence intervals, significance tests, and verdicts.
 
 ## Neural Net Architectures
+Each neural network implementation can define its own model size.
 
 ### Plakoto
-`266 → 256 → 128 → 64 → 1`
+- (A) `266 → 256 → 128 → 64 → 1`
 
 ### Fevga
-`216 → 256 → 128 → 64 → 1`
+- (A) `216 → 256 → 128 → 64 → 1`
 
 ### Default (Backgammon, Tavla, Portes)
-`216 → 256 → 128 → 64 → 5`
+- Legacy (A): `216 → 256 → 128 → 64 → 5`
+- New (B): `216 → 384 → 192 → 96 → 5`
 
 ## Training Approach
 
 Each generation is produced by:
 
-1. Running self-play games using the previous generation's model to generate training samples.
-2. Training a new model on accumulated samples from all prior generations (gen 0 to current).
-3. Evaluating the new model against the previous generation (and optionally earlier generations) in a tournament.
-4. Promoting the new model if the tournament verdict is **STRONGER** with statistical significance.
+1. Run self-play games with the previous generation's model to generate training
+  samples.
+2. Train a candidate model. A typical data mix is 70% previous-generation self-play,
+  15% games against the WildBG bot service, and 15% replay data from earlier
+  generations.
+3. Evaluate the candidate against the previous generation, and optionally earlier
+  generations, using tournaments at 1-ply and 2-ply search depth.
+4. Promote the candidate when the tournament verdict is **STRONGER** with statistical
+  significance. The candidate is marked as **STRONGER** if the lower 95% CI is greater than 52%. A win rate above 50% but below the threshold can be marked as **INCONCLUSIVE** or **EQUIVALENT**.
 
-Tournament significance is assessed via a two-proportion z-test with a 95% confidence interval.
+Tournament significance is assessed with a two-proportion z-test and a 95% confidence
+interval.
+
+Monte Carlo and TD($\lambda$) targets are compared periodically, typically after three
+to five generations, to select the target strategy for subsequent training.
+
+## Common Learning Rates
+
+- `1.5e-3`: aggressive
+- `1e-4` to `3e-4`: normal
+- `5e-5`: conservative
+
+## Glossary
+
+- `sp`: self-play
+- `wb`: WildBG bot service
+- `lm`: linear model
+- `MC`: Monte Carlo
+- `TD`: temporal-difference learning
+- `val`: validation
