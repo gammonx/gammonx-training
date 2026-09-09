@@ -16,12 +16,12 @@
 | small multi  | 1.5          |
 | big s gap    | 0.2          |
 | big multi    | 0.5          |
-| completed    | ?       |
-| discarded    | ?            |
-| samples      | ?    |
-| avg turns    | ?         |
-| avg pred var | ?            |
-| duration     | ?  |
+| completed    | 264_000      |
+| discarded    | 0            |
+| samples      | 16_216_917   |
+| avg turns    | 61.4         |
+| avg pred var | 0.10440      |
+| duration     | 00:07:04:46  |
 
 ### Trainings Data self play selective 1.5-ply (2)
 |    Metric    |    Value     |
@@ -34,12 +34,12 @@
 | small multi  | 1.5          |
 | big s gap    | 0.2          |
 | big multi    | 0.5          |
-| completed    | ?       |
-| discarded    | ?            |
-| samples      | ?    |
-| avg turns    | ?         |
-| avg pred var | ?            |
-| duration     | ?  |
+| completed    | 264_000      |
+| discarded    | 0            |
+| samples      | 16_216_917   |
+| avg turns    | 61.4         |
+| avg pred var | 0.10440      |
+| duration     | 00:07:04:46  |
 
 ### Trainings Data wildbg selective 1.5-ply
 |    Metric    |    Value     |
