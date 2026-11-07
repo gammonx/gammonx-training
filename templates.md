@@ -25,18 +25,14 @@
 | train size   | ?    |
 | val size     | ?      |
 | train mean   | ?       |
-| train min    | 0            |
-| train max    | 1            |
 | t-near 0.5   | ?         |
 | val mean     | ?       |
-| val min      | 0            |
-| val max      | 1            |
 | v-near 0.5   | ?         |
 | parent v-loss| -            |
 | e1 t-loss    | ?      |
 | e1 v-loss    | ?      |
-| e200 t-loss  | ?      |
-| e200 v-loss  | ?      |
+| e50 t-loss   | ?      |
+| e50 v-loss   | ?      |
 | val gap      | ?      |
 
 ### Tournaments

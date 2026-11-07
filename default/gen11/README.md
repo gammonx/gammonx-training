@@ -10,7 +10,7 @@
 | ------------ | ------------ |
 | prior gen    | gen10        |
 | sample size  | 264_000      |
-| lambda       | 1            |
+| lambda       | 0.95         |
 | gamma        | 1            |
 | small s gap  | 0.01         |
 | small multi  | 1.5          |
@@ -28,7 +28,7 @@
 | ------------ | ------------ |
 | prior gen    | gen10        |
 | sample size  | 264_000      |
-| lambda       | 1            |
+| lambda       | 0.95         |
 | gamma        | 1            |
 | small s gap  | 0.01         |
 | small multi  | 1.5          |
@@ -46,7 +46,7 @@
 | ------------ | ------------ |
 | prior gen    | gen10        |
 | sample size  | 204_000      |
-| lambda       | 1            |
+| lambda       | 0.95         |
 | gamma        | 1            |
 | small s gap  | 0.01         |
 | small multi  | 1.5          |
