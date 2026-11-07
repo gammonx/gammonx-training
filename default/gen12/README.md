@@ -149,10 +149,50 @@
   Discarded    : 0
   Avg turns    : 56.2
   Model A wins : 523 (52.3%)
-  Model B wins : 477 (47.7%)                                                                    "Debian-bookworm-lates" 11:29 07-Nov-26
+  Model B wins : 477 (47.7%)
   A win rate   : 52.30%
   95% CI       : [49.20%, 55.38%]
   Significance : p>0.10  (z=1.45) � not significant
   Win rate last 10 checkpoints: 52.31% � 0.04%
+  Verdict: INCONCLUSIVE.
+===========================================
+
+===========================================
+  gen12-6 vs. wildbg
+===========================================
+  Model A : training_net.td10.gen12-6
+  Model B : wildbg
+  Modus   : (from game)
+  Total games  : 20000
+  Decisive     : 20000
+  Draws        : 0
+  Discarded    : 0
+  Avg turns    : 55.3
+  Model A wins : 8803 (44.0%)
+  Model B wins : 11197 (56.0%)
+  A win rate   : 44.01%
+  95% CI       : [43.33%, 44.70%]
+  Significance : p<0.001 (z=16.93) ? highly significant
+  Win rate last 10 checkpoints: 44.01% ? 0.00%
+  Verdict: B is STRONGER (significant).
+===========================================
+
+===========================================
+  gen12-6 vs. wildbg
+===========================================
+  Model A : training_net.td10.gen12-6
+  Model B : wildbg
+  Modus   : (from game)
+  Total games  : 5000
+  Decisive     : 5000
+  Draws        : 0
+  Discarded    : 0
+  Avg turns    : 55.9
+  Model A wins : 2391 (47.8%)
+  Model B wins : 2609 (52.2%)
+  A win rate   : 47.82%
+  95% CI       : [46.44%, 49.21%]
+  Significance : p<0.01  (z=3.08) ? significant
+  Win rate last 10 checkpoints: 47.79% ? 0.02%
   Verdict: INCONCLUSIVE.
 ===========================================
