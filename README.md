@@ -91,11 +91,25 @@ Each generation is produced by:
   generations.
 3. Evaluate the candidate against the previous generation, and optionally earlier
   generations, using tournaments at 1-ply and 2-ply search depth.
-4. Promote the candidate when the tournament verdict is **STRONGER** with statistical
-  significance. The candidate is marked as **STRONGER** if the lower 95% CI is greater than 52%. A win rate above 50% but below the threshold can be marked as **INCONCLUSIVE** or **EQUIVALENT**.
+4. Compare the candidate as model A with the current champion as model B. Promote
+  manually when A's average cubeless points per game has an approximate 95%
+  confidence interval entirely above zero. An interval entirely below zero favors
+  B; an interval crossing or touching zero is **INCONCLUSIVE**.
 
-Tournament significance is assessed with a two-proportion z-test and a 95% confidence
-interval.
+The primary benchmark is actual signed cubeless points: +/-1 for singles, +/-2 for
+gammons, +/-3 for backgammons, and 0 for genuine draws, following the game variant's
+outcome rules. Win counts and decisive-game win rate remain secondary information.
+The interval uses the sample standard error and a large-sample normal approximation
+with multiplier 1.96. It requires at least 100 completed games and nonzero observed
+score variance; this minimum does not guarantee adequate power. Draws are included
+in the scored-game count. Failed or unfinished games are excluded from scores, and
+any discarded or unprocessed games make the promotion verdict inconclusive.
+
+Choose the tournament size in advance and use the final report for promotion.
+Progress estimates do not support repeatedly extending a run until it passes.
+The interval assumes independent games; paired dice and sequential stopping need
+different analysis. Inconclusive results do not establish equivalence. Historical
+tournament logs retain their original win-rate-based output and verdicts.
 
 Monte Carlo and TD($\lambda$) targets are compared periodically, typically after three
 to five generations, to select the target strategy for subsequent training.

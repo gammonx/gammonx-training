@@ -36,4 +36,18 @@
 | val gap      | ?      |
 
 ### Tournaments
-TBD
+
+| Metric | Value |
+| --- | --- |
+| Model A (candidate) | ? |
+| Model B (champion/opponent) | ? |
+| Requested games | ? |
+| Scored games (including draws) | ? |
+| A cubeless points/game | ? |
+| Approx. 95% equity CI | [? , ?] |
+| Model A wins | ? |
+| Model B wins | ? |
+| Draws | ? |
+| Discarded games | ? |
+| A win rate (secondary, decisive games) | ? |
+| Verdict (point equity) | ? |
