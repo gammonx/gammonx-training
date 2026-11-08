@@ -46,7 +46,11 @@
 | A cubeless points/game | ? |
 | Approx. 95% equity CI | [? , ?] |
 | Model A wins | ? |
+| A gammon wins (2 points) | ? |
+| A backgammon wins (3 points) | ? |
 | Model B wins | ? |
+| B gammon wins (2 points) | ? |
+| B backgammon wins (3 points) | ? |
 | Draws | ? |
 | Discarded games | ? |
 | A win rate (secondary, decisive games) | ? |

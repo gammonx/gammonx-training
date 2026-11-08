@@ -118,6 +118,30 @@
 | val gap      | 0.00000      |
 
 ===========================================
+  gen12-6 vs. gen11
+===========================================
+  Model A                : training_net.td10.gen12-6
+  Model B                : training_net.td095.gen11
+  Modus                  : (from game)
+  Total games            : 10000
+  Scored games           : 10000
+  Decisive               : 10000
+  Draws                  : 0
+  Discarded              : 0
+  Avg turns              : 56.2
+  A cubeless points/game : +0.1956
+  Approx. 95% equity CI  : [+0.1676, +0.2236]
+  Model A wins           : 5700
+  A gammon wins          : 1659
+  A backgammon wins      : 168
+  Model B wins           : 4300
+  B gammon wins          : 1343
+  B backgammon wins      : 48
+  A win rate             : 57.00%
+  Verdict: A is STRONGER (positive point equity; approximate 95% CI excludes zero).
+===========================================
+
+===========================================
   gen12-6 vs. gen12-5-1 1-ply
 ===========================================
   Model A : training_net.td10.gen12-6
@@ -149,10 +173,121 @@
   Discarded    : 0
   Avg turns    : 56.2
   Model A wins : 523 (52.3%)
-  Model B wins : 477 (47.7%)                                                                    "Debian-bookworm-lates" 11:29 07-Nov-26
+  Model B wins : 477 (47.7%)
   A win rate   : 52.30%
   95% CI       : [49.20%, 55.38%]
   Significance : p>0.10  (z=1.45) � not significant
   Win rate last 10 checkpoints: 52.31% � 0.04%
   Verdict: INCONCLUSIVE.
+===========================================
+
+## TD(1.0) 50k gen12-7 2-ply
+- batch size 512
+- learning rate 1e-4
+
+### Training Model
+|    Metric    |    Value     |
+| ------------ | ------------ |
+| train data   | gen 11       |
+| train size   | 2_570_396    |
+| val size     | 432_489      |
+| train mean   | 0.5044       |
+| t-near 0.5   | 0.0%         |
+| val mean     | 0.5044       |
+| v-near 0.5   | 0.0%         |
+| parent v-loss| 0.22367      |
+| e1 t-loss    | 0.21036      |
+| e1 v-loss    | 0.20959      |
+| e1 t-loss    | 0.21036      |
+| e1 v-loss    | 0.20959      |
+| val gap      | 0.00077      |
+
+===========================================
+  gen12-7 vs. gen12-6
+===========================================
+  Model A : training_net.td10.gen12-7
+  Model B : training_net.td10.gen12-6
+  Modus   : (from game)
+  Total games  : 10000
+  Scored games : 10000
+  Decisive     : 10000
+  Draws        : 0
+  Discarded    : 0
+  Avg turns    : 56.4
+  A cubeless points/game : -0.0739
+  Approx. 95% equity CI  : [-0.1021, -0.0457]
+  Model A wins       : 4757
+  A gammon wins      : 1506
+  A backgammon wins  : 60
+  Model B wins       : 5243
+  B gammon wins      : 1703
+  B backgammon wins  : 88
+  A win rate (secondary, decisive games) : 47.57%
+  Verdict: B is STRONGER (negative point equity for A; approximate 95% CI excludes zero).
+===========================================
+
+## TD(1.0) 50k gen12-8 2-ply
+- batch size 512
+- learning rate 1130e-6
+
+### Training Model
+|    Metric    |    Value     |
+| ------------ | ------------ |
+| train data   | gen 11       |
+| train size   | 2_570_396    |
+| val size     | 432_489      |
+| train mean   | 0.5044       |
+| t-near 0.5   | 0.0%         |
+| val mean     | 0.5044       |
+| v-near 0.5   | 0.0%         |
+| parent v-loss| 0.22367      |
+| e1 t-loss    | 0.21301      |
+| e1 v-loss    | 0.21194      |
+| e2 t-loss    | 0.21095      |
+| e2 v-loss    | 0.21160      |
+| val gap      | 0.00065      |
+
+## TD(1.0) 50k gen12-9 2-ply
+- batch size 32_768
+- learning rate 1e-4
+
+### Training Model
+|    Metric    |    Value     |
+| ------------ | ------------ |
+| train data   | gen 11       |
+| train size   | 2_570_396    |
+| val size     | 432_489      |
+| train mean   | 0.5044       |
+| t-near 0.5   | 0.0%         |
+| val mean     | 0.5044       |
+| v-near 0.5   | 0.0%         |
+| parent v-loss| 0.22367      |
+| e1 t-loss    | 0.21253      |
+| e1 v-loss    | 0.20982      |
+| e9  t-loss   | 0.20872      |
+| e9  v-loss   | 0.20914      |
+| val gap      | 0.00032      |
+
+===========================================
+  gen12-9 vs. gen12-6
+===========================================
+  Model A : training_net.td10.gen12-9
+  Model B : training_net.td10.gen12-6
+  Modus   : (from game)
+  Total games  : 10000
+  Scored games : 10000
+  Decisive     : 10000
+  Draws        : 0
+  Discarded    : 0
+  Avg turns    : 55.2
+  A cubeless points/game : -0.0299
+  Approx. 95% equity CI  : [-0.0578, -0.0020]
+  Model A wins       : 4884
+  A gammon wins      : 1525
+  A backgammon wins  : 54
+  Model B wins       : 5116
+  B gammon wins      : 1572
+  B backgammon wins  : 64
+  A win rate (secondary, decisive games) : 48.84%
+  Verdict: B is STRONGER (negative point equity for A; approximate 95% CI excludes zero).
 ===========================================
