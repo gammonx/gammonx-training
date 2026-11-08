@@ -181,6 +181,46 @@
   Verdict: INCONCLUSIVE.
 ===========================================
 
+===========================================
+  gen12-6 vs. wildbg
+===========================================
+  Model A : training_net.td10.gen12-6
+  Model B : wildbg
+  Modus   : (from game)
+  Total games  : 20000
+  Decisive     : 20000
+  Draws        : 0
+  Discarded    : 0
+  Avg turns    : 55.3
+  Model A wins : 8803 (44.0%)
+  Model B wins : 11197 (56.0%)
+  A win rate   : 44.01%
+  95% CI       : [43.33%, 44.70%]
+  Significance : p<0.001 (z=16.93) ? highly significant
+  Win rate last 10 checkpoints: 44.01% ? 0.00%
+  Verdict: B is STRONGER (significant).
+===========================================
+
+===========================================
+  gen12-6 vs. wildbg
+===========================================
+  Model A : training_net.td10.gen12-6
+  Model B : wildbg
+  Modus   : (from game)
+  Total games  : 5000
+  Decisive     : 5000
+  Draws        : 0
+  Discarded    : 0
+  Avg turns    : 55.9
+  Model A wins : 2391 (47.8%)
+  Model B wins : 2609 (52.2%)
+  A win rate   : 47.82%
+  95% CI       : [46.44%, 49.21%]
+  Significance : p<0.01  (z=3.08) ? significant
+  Win rate last 10 checkpoints: 47.79% ? 0.02%
+  Verdict: INCONCLUSIVE.
+===========================================
+
 ## TD(1.0) 50k gen12-7 2-ply
 - batch size 512
 - learning rate 1e-4
