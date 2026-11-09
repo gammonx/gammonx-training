@@ -115,6 +115,28 @@
   A win rate             : 48.54%
   Verdict: B is STRONGER (negative point equity for A; approximate 95% CI excludes zero).
 
+### gen13-2 vs. wildbg 1-ply
+  Model A                : training_net.td095.gen13-2
+  Model B                : wildbg
+   Modus                  : (from game)
+  Total games            : 20000
+  Scored games           : 20000
+  Decisive               : 20000
+  Draws                  : 0
+  Discarded              : 0
+  Avg turns              : 56.2
+  A cubeless points/game : -0.1337
+  Approx. 95% equity CI  : [-0.1530, -0.1144]
+  Model A wins           : 8986
+  A gammon wins          : 2493
+  A backgammon wins      : 143
+  Model B wins           : 11014
+  B gammon wins          : 3105
+  B backgammon wins      : 160
+  A win rate             : 44.93%
+  Verdict: B is STRONGER (negative point equity for A; approximate 95% CI excludes zero).
+===========================================
+
 ## TD(0.7) 50k gen13-3 2-ply
 - batch size 16_384
 - learning rate 1e-4
@@ -195,7 +217,48 @@
   B backgammon wins      : 35
   A win rate             : 50.32%
   Verdict: INCONCLUSIVE (insufficient evidence of a difference in point equity).
-===========================================
+
+### gen13-3 vs. wildbg 1-ply
+  Model A                : training_net.td070.gen13-3
+  Model B                : wildbg
+   Modus                  : (from game)
+  Total games            : 20000
+  Scored games           : 20000
+  Decisive               : 20000
+  Draws                  : 0
+  Discarded              : 0
+  Avg turns              : 56.0
+  A cubeless points/game : -0.0954
+  Approx. 95% equity CI  : [-0.1148, -0.0759]
+  Model A wins           : 9258
+  A gammon wins          : 2697
+  A backgammon wins      : 135
+  Model B wins           : 10742
+  B gammon wins          : 3138
+  B backgammon wins      : 126
+  A win rate             : 46.29%
+  Verdict: B is STRONGER (negative point equity for A; approximate 95% CI excludes zero).
+
+### gen13-3 vs. wildbg 2-ply
+  A                : training_net.td070.gen13-3
+  Model B                : wildbg
+   Modus                  : (from game)
+  Total games            : 10000
+  Scored games           : 10000
+  Decisive               : 10000
+  Draws                  : 0
+  Discarded              : 0
+  Avg turns              : 55.7
+  A cubeless points/game : -0.0070
+  Approx. 95% equity CI  : [-0.0343, +0.0203]
+  Model A wins           : 4895
+  A gammon wins          : 1426
+  A backgammon wins      : 84
+  Model B wins           : 5105
+  B gammon wins          : 1370
+  B backgammon wins      : 42
+  A win rate             : 48.95%
+  Verdict: INCONCLUSIVE (insufficient evidence of a difference in point equity).
 
 ### gen13-3 vs. gen13-3-repeat 2-ply
   Model A                : training_net.td070.gen13-3
