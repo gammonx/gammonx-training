@@ -1,0 +1,30 @@
+{
+  "appPath": "C:/Source/gammonx-server/src/GammonX/artifacts/bin/GammonX.Mars.Training/debug/GammonX.Mars.Training.exe",
+  "trainingCsv": "../training_data/gen13.training_data.td070.sp.2ply.50k-1.csv",
+  "parentModel": "../../gen12/training_net.td10.gen12-6.dat",
+  "referenceModel": "../training_net.td070.gen13-3.dat",
+  "baselineChallenger": "../training_net.td095.gen13-2.dat",
+  "outputDirectory": "runs/gen13-new-search",
+  "gameMode": "Backgammon",
+  "screenGames": 10000,
+  "evalBatchSize": 64,
+  "processCount": 16,
+  "producerCount": 8,
+  "queueCapacity": 16,
+  "torchThreads": 8,
+  "keepBinaryCaches": false,
+  "sourceTargets": { "lambda": 0.70, "gamma": 1.0 },
+  "optimizerCandidates": [
+    { "name": "l070-lr1e4-b16384-repeat", "learningRate": 0.0001, "batchSize": 16384 },
+    { "name": "l070-lr5e5-b16384", "learningRate": 0.00005, "batchSize": 16384 },
+    { "name": "l070-lr2e4-b16384", "learningRate": 0.0002, "batchSize": 16384 },
+    { "name": "l070-lr1e4-b8192", "learningRate": 0.0001, "batchSize": 8192 },
+    { "name": "l070-lr1e4-b32768", "learningRate": 0.0001, "batchSize": 32768 }
+  ],
+  "targetCandidates": [
+    { "name": "l050-g1", "lambda": 0.50, "gamma": 1.0 },
+    { "name": "l085-g1", "lambda": 0.85, "gamma": 1.0 },
+    { "name": "l095-g1", "lambda": 0.95, "gamma": 1.0 },
+    { "name": "l070-g0995", "lambda": 0.70, "gamma": 0.995 }
+  ]
+}

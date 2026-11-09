@@ -154,7 +154,7 @@
 | val gap      | 0.00084      |
 
 
-### gen13-1 vs. gen13-2 1-ply
+### gen13-3 vs. gen13-2 1-ply
   Model A                : training_net.td070.gen13-3
   Model B                : training_net.td095.gen13-2
   Modus                  : (from game)
@@ -175,7 +175,7 @@
   A win rate             : 50.95%
   Verdict: INCONCLUSIVE (insufficient evidence of a difference in point equity).
 
-  ### gen13-1 vs. gen13-2 2-ply
+  ### gen13-3 vs. gen13-2 2-ply
   Model A                : training_net.td070.gen13-3
   Model B                : training_net.td095.gen13-2
   Modus                  : (from game)
@@ -196,3 +196,24 @@
   A win rate             : 50.32%
   Verdict: INCONCLUSIVE (insufficient evidence of a difference in point equity).
 ===========================================
+
+### gen13-3 vs. gen13-3-repeat 2-ply
+  Model A                : training_net.td070.gen13-3
+  Model B                : training_net.td070.gen13-3-repeat
+   Modus                  : (from game)
+  Total games            : 5000
+  Scored games           : 5000
+  Decisive               : 5000
+  Draws                  : 0
+  Discarded              : 0
+  Avg turns              : 56.1
+  A cubeless points/game : -0.0026
+  Approx. 95% equity CI  : [-0.0417, +0.0365]
+  Model A wins           : 2502
+  A gammon wins          : 723
+  A backgammon wins      : 36
+  Model B wins           : 2498
+  B gammon wins          : 754
+  B backgammon wins      : 29
+  A win rate             : 50.04%
+  Verdict: INCONCLUSIVE (insufficient evidence of a difference in point equity).

@@ -1,0 +1,21 @@
+{
+  "FormatVersion": 2,
+  "Modus": "Backgammon",
+  "OutputMode": "MonotonicCumulative",
+  "Architecture": "B",
+  "Name": "l070-g1-lr1e4-b16384-repeat.dat",
+  "Training": {
+    "TrainCsvPath": "C:\\Source\\gammonx-training\\default\\gen13\\training_data\\gen13.training_data.td070.sp.2ply.50k-1.csv",
+    "ValCsvPath": "C:\\Source\\gammonx-training\\default\\gen13\\training_data\\gen13.training_data.td070.sp.2ply.50k-1.val.csv",
+    "OutputModelPath": "C:\\Source\\gammonx-training\\default\\gen13\\tuning\\l070-g1-lr1e4-b16384-repeat.dat",
+    "InputModelPath": "C:\\Source\\gammonx-training\\default\\gen12\\training_net.td10.gen12-6.dat",
+    "Epochs": 50,
+    "BatchSize": 16384,
+    "ProducerCount": 8,
+    "QueueCapacity": 16,
+    "LearningRate": 0.0001,
+    "EarlyStoppingPatience": 8,
+    "MinimumDelta": 1E-05,
+    "ShuffleLabels": false
+  }
+}
