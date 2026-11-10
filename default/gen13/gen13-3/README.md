@@ -240,9 +240,9 @@
   Verdict: B is STRONGER (negative point equity for A; approximate 95% CI excludes zero).
 
 ### gen13-3 vs. wildbg 2-ply
-  A                : training_net.td070.gen13-3
+  Model A                : training_net.td070.gen13-3
   Model B                : wildbg
-   Modus                  : (from game)
+  Modus                  : (from game)
   Total games            : 10000
   Scored games           : 10000
   Decisive               : 10000
