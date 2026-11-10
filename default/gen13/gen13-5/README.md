@@ -72,6 +72,27 @@
 
 ### Tournaments
 
+#### gen13-5-run1 vs. gen13-4-run3
+  Model A                : training_net.td070.gen13-5-run1
+  Model B                : training_net.td070.gen13-4-run3
+  Modus                  : (from game)
+  Total games            : 10000
+  Scored games           : 10000
+  Decisive               : 10000
+  Draws                  : 0
+  Discarded              : 0
+  Avg turns              : 55.5
+  A cubeless points/game : -0.0158
+  Approx. 95% equity CI  : [-0.0430, +0.0114]
+  Model A wins           : 4933
+  A gammon wins          : 1380
+  A backgammon wins      : 55
+  Model B wins           : 5067
+  B gammon wins          : 1416
+  B backgammon wins      : 49
+  A win rate             : 49.33%
+  Verdict: INCONCLUSIVE (insufficient evidence of a difference in point equity).
+
 #### gen13-5-run1 vs. wildbg 1-ply
   Model A                : training_net.td070.gen13-5-run1
   Model B                : wildbg
