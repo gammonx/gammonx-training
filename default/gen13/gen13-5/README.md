@@ -1,5 +1,5 @@
-## TD(0.7) 100k gen13-4 5-ply
-- based on gen13-3
+## TD(0.7) 100k gen13-5 2-ply
+- based on gen13-4
 - batch size 16_384
 - learning rate 1e-4
 - no exploration
@@ -71,6 +71,27 @@
 | val gap      | 0.00040      |
 
 ### Tournaments
+
+#### gen13-5-run1 vs. wildbg 1-ply
+  Model A                : training_net.td070.gen13-5-run1
+  Model B                : wildbg
+  Modus                  : (from game)
+  Total games            : 50000
+  Scored games           : 50000
+  Decisive               : 50000
+  Draws                  : 0
+  Discarded              : 0
+  Avg turns              : 55.7
+  A cubeless points/game : -0.0787
+  Approx. 95% equity CI  : [-0.0909, -0.0665]
+  Model A wins           : 23368
+  A gammon wins          : 6545
+  A backgammon wins      : 380
+  Model B wins           : 26632
+  B gammon wins          : 7272
+  B backgammon wins      : 352
+  A win rate             : 46.74%
+  Verdict: B is STRONGER (negative point equity for A; approximate 95% CI excludes zero).
 
 #### gen13-5-run1 vs. gen13-4-run3 1-ply
   Model A                : training_net.td070.gen13-5-run1
