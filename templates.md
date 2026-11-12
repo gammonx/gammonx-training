@@ -34,24 +34,3 @@
 | e50 t-loss   | ?      |
 | e50 v-loss   | ?      |
 | val gap      | ?      |
-
-### Tournaments
-
-| Metric | Value |
-| --- | --- |
-| Model A (candidate) | ? |
-| Model B (champion/opponent) | ? |
-| Requested games | ? |
-| Scored games (including draws) | ? |
-| A cubeless points/game | ? |
-| Approx. 95% equity CI | [? , ?] |
-| Model A wins | ? |
-| A gammon wins (2 points) | ? |
-| A backgammon wins (3 points) | ? |
-| Model B wins | ? |
-| B gammon wins (2 points) | ? |
-| B backgammon wins (3 points) | ? |
-| Draws | ? |
-| Discarded games | ? |
-| A win rate (secondary, decisive games) | ? |
-| Verdict (point equity) | ? |
