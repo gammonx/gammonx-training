@@ -1,0 +1,21 @@
+{
+  "FormatVersion": 2,
+  "Modus": "Plakoto",
+  "OutputMode": "MonotonicCumulative",
+  "Architecture": "B",
+  "Name": "training_net.td10.gen10-run3.dat",
+  "Training": {
+    "TrainCsvPath": "/home/hegi/sandbox/console-app/linux-x64/plakoto_data/gen10.training_data.td10.sp.1ply.50k-1.csv",
+    "ValCsvPath": "/home/hegi/sandbox/console-app/linux-x64/plakoto_data/gen10.training_data.td10.sp.1ply.50k-1.val.csv",
+    "OutputModelPath": "training_net.td10.gen10-run3.dat",
+    "InputModelPath": "",
+    "Epochs": 50,
+    "BatchSize": 16384,
+    "ProducerCount": 32,
+    "QueueCapacity": 64,
+    "LearningRate": 0.0001,
+    "EarlyStoppingPatience": 8,
+    "MinimumDelta": 1E-05,
+    "ShuffleLabels": false
+  }
+}
